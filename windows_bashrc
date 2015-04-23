@@ -1,0 +1,3 @@
+alias marketplace='cd ~/Desktop/Panjo/marketplace'
+alias database='cd ~/Desktop/Panjo/database'
+alias activatevirtualenv='source env/Scripts/activate'
