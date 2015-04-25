@@ -1,0 +1,52 @@
+execute pathogen#infect()
+execute pathogen#helptags()
+syntax on
+filetype plugin indent on
+syntax enable
+set nofoldenable   
+
+let g:solarized_termcolors=256
+highlight SpecialKey ctermfg=11 ctermbg=8
+set background=dark
+colorscheme solarized
+set guifont=Consolas\ 10
+set autoread
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:vim_json_syntax_conceal = 0
+
+" easier moving of code blocks
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
+
+set number
+set tw=180
+set colorcolumn=
+set columns=120
+
+set history=700
+set undolevels=700
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+set ignorecase
+
+"CtrlP
+set wildignore+=*.pyc
