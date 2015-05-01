@@ -1,3 +1,12 @@
-alias marketplace='cd ~/Desktop/Panjo/marketplace'
-alias database='cd ~/Desktop/Panjo/database'
-alias activatevirtualenv='source env/Scripts/activate'
+alias panjo='cd /f/Repos'
+alias marketplace='cd /f/Repos/marketplace'
+alias database='cd /f/Repos/database'
+alias automation='cd /f/Repos/panjo-automation'
+alias errorlog='cat /f/Repos/marketplace/Panjo/logs/exception.log'
+alias activateEnv='source env/Scripts/activate' 
+alias updatedb='/f/Repos/marketplace/Panjo.Data.Deploy/bin/Debug/Panjo.Data.Deploy.exe'
+alias panjobower='cd Panjo && bower install && cd ..'
+
+alias dopython='cd /f/Python'
+PATH=$PATH:/c/Python27/
+PATH=$PATH:/c/Python27/Scripts
