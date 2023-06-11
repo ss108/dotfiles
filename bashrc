@@ -37,13 +37,13 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -56,25 +56,24 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-source ~/.git-prompt.sh
+parse_git_branch() {
+	 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+ }
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$(__git_ps1)\$ '
-    #PS1='$(__git_ps1) \w\$ '
-    PS1='[\W$(__git_ps1 " (%s)")]\$ '
-
+	 PS1=':\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
+ else
+	  PS1=':\w$(parse_git_branch)\$ '
 fi
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# case "$TERM" in
+# xterm*|rxvt*)
+#     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#     ;;
+# *)
+#     ;;
+# esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -94,7 +93,9 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+#alias l='ls -CF'
+
+alias launch-cl=`cd ~/code/flp/courtlistener/docker/courtlistener && docker compose up`
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,22 +122,19 @@ if ! shopt -oq posix; then
 fi
 
 
-#Run the shell script for arandr to set screen settings when terminal is opened
-sh ~/.screenlayout/dual-left-portrait.sh
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(direnv hook bash)"
+source "$(npm root -g)/@hyperupcall/autoenv/activate.sh"
 
-alias ..='cd ..'
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-alias dualscreenhome='bash ~/.screenlayout/dual-left-portrait.sh'
-alias tb='cd ~/programming/trubrain-django && tbenv && tbnode'
-alias tbenv='source ./tbenv/bin/activate'
-alias tbnode='. tbnode/bin/activate'
-alias trebekbot='doprogramming && cd ruby/trebekbot'
-alias haskellforgreatgood='cd ~/programming/haskell/learnings/forgreatgood'
-alias dohaskell='ghci'
-alias doprogramming='cd ~/programming'
+eval "$(pyenv virtualenv-init -)"
 
-alias pycharm='sh ~/Downloads/pycharm-4.0.4/bin/pycharm.sh'
+[ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
 
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
