@@ -60,9 +60,9 @@ parse_git_branch() {
 	 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
  }
 if [ "$color_prompt" = yes ]; then
-	 PS1=':\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
+	 PS1='\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
  else
-	  PS1=':\w$(parse_git_branch)\$ '
+	  PS1='\w$(parse_git_branch)\$ '
 fi
 #unset color_prompt force_color_prompt
 
@@ -95,7 +95,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 #alias l='ls -CF'
 
-alias launch-cl=`cd ~/code/flp/courtlistener/docker/courtlistener && docker compose up`
+# alias launch-cl=`cd ~/code/flp/courtlistener/docker/courtlistener && docker compose up`
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
