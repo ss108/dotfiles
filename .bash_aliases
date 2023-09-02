@@ -1,5 +1,5 @@
 export PATH="/home/ss108/.local/bin:$PATH"
-alias activate_venv='. venv/bin/activate'
+alias actvenv='. venv/bin/activate'
 
 eval "$(direnv hook bash)"
 
