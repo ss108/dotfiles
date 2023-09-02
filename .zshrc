@@ -11,6 +11,9 @@ export DEFAULT_USER=$USER
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -71,7 +74,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git virtualenv zsh-autosuggestions zsh-syntax-highlighting	
+	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +108,8 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/code/dotfiles/.bash_aliases ]; then
     . ~/code/dotfiles/.bash_aliases
 fi
+
+unsetopt BEEP
+
+
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *"
