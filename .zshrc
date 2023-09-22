@@ -11,9 +11,6 @@ export DEFAULT_USER=$USER
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-
-
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -29,7 +26,7 @@ ZSH_THEME="agnoster"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -74,8 +71,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv zsh-autosuggestions zsh-syntax-highlighting	
-	)
+plugins=(git virtualenv zsh-autosuggestions zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,5 +108,16 @@ fi
 
 unsetopt BEEP
 
-
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *"
+
+[ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
+
+export PATH=/home/ss108/.local/bin:$PATH
+#PDM stuff
+# if [ -n "$PYTHONPATH" ]; then
+#   export PYTHONPATH='/home/ss108/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
+# else
+#   export PYTHONPATH='/home/ss108/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582'
+# fi
+
+# export DOCKER_HOST=unix:///run/user/1000/docker.sock
