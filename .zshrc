@@ -120,4 +120,5 @@ export PATH=/home/ss108/.local/bin:$PATH
 #   export PYTHONPATH='/home/ss108/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582'
 # fi
 
-# export DOCKER_HOST=unix:///run/user/1000/docker.sock
+# Docker
+export DOCKER_HOST=unix:///run/user/1000/docker.sock

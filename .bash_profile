@@ -18,9 +18,6 @@ test -r /home/ss108/.opam/opam-init/init.sh && . /home/ss108/.opam/opam-init/ini
 
 eval "$(direnv hook bash)"
 
-# Docker
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
-
 # Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
