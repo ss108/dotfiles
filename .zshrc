@@ -113,6 +113,7 @@ ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *"
 [ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
 
 export PATH=/home/ss108/.local/bin:$PATH
+export PATH=/home/ss108/.nix-profile/bin/python3.12:$PATH
 #PDM stuff
 # if [ -n "$PYTHONPATH" ]; then
 #   export PYTHONPATH='/home/ss108/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
