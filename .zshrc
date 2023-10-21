@@ -123,3 +123,4 @@ export PATH=/home/ss108/.nix-profile/bin/python3.12:$PATH
 
 # Docker
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
