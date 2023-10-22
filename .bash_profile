@@ -22,3 +22,5 @@ eval "$(direnv hook bash)"
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+if [ -e /home/ss108/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ss108/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

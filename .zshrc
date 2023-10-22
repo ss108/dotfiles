@@ -124,3 +124,8 @@ export PATH=/home/ss108/.nix-profile/bin/python3.12:$PATH
 # Docker
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
+
+if [ -e /home/ss108/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ss108/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# NODEJS
+export PATH=/usr/local/nodejs/bin:$PATH
