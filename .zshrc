@@ -110,7 +110,7 @@ unsetopt BEEP
 
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *"
 
-[ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
+#[ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
 
 export PATH=/home/ss108/.local/bin:$PATH
 export PATH=/home/ss108/.nix-profile/bin/python3.12:$PATH
@@ -131,3 +131,4 @@ export PATH=/usr/local/nodejs/bin:$PATH
 
 # Nim
 export PATH=/home/ss108/.nimble/bin:$PATH
+[ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
