@@ -140,3 +140,6 @@ export PATH=/usr/local/nodejs/bin:$PATH
 # Nim
 export PATH=/home/ss108/.nimble/bin:$PATH
 [ -f "/home/ss108/.ghcup/env" ] && source "/home/ss108/.ghcup/env" # ghcup-env
+
+# Add stuff installed via Snap to path
+export PATH=/snap/bin:$PATH
