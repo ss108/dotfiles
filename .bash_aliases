@@ -5,3 +5,5 @@ alias crvenv='python3 -m venv .venv'
 alias cl-docker-up='docker compose -f ./docker/courtlistener/docker-compose.yml up -d'
 alias cl-docker-down='docker compose -f ./docker/courtlistener/docker-compose.yml down'
 
+alias ruff-check='ruff check $(git status --porcelain | grep "^ M" | cut -d " " -f 3-)'
+alias ruff-fix='ruff check $(git status --porcelain | grep "^ M" | cut -d " " -f 3-) --fix'
