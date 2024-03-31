@@ -8,5 +8,5 @@ alias cl-docker-down='docker compose -f ./docker/courtlistener/docker-compose.ym
 alias ruff-check='ruff check $(git status --porcelain | grep "^ M" | cut -d " " -f 3-)'
 alias ruff-fix='ruff check $(git status --porcelain | grep "^ M" | cut -d " " -f 3-) --fix'
 
-alias trellis-shell='docker exec -it web /bin/bash'
-alias trellis-ml-shell='docker exec -it trellis-ml /bin/bash'
+alias trellis-shell='docker-shell web'
+alias trellis-ml-shell='docker-shell trellis-ml'

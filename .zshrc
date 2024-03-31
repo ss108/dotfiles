@@ -122,7 +122,7 @@ export PATH=/home/ss108/.nix-profile/bin/python3.12:$PATH
 # fi
 
 # Docker
-if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null; then
+if grep -qE "(Microsoft|WSL)" /proc/version &>/dev/null; then
     # WSL2
     # export DOCKER_HOST=tcp://localhost:2375
     export DOCKER_HOST=unix:///var/run/docker.sock
@@ -130,7 +130,6 @@ else
     # Native Linux
     export DOCKER_HOST=unix:///run/user/1000/docker.sock
 fi
-
 
 if [ -e /home/ss108/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ss108/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
@@ -143,3 +142,7 @@ export PATH=/home/ss108/.nimble/bin:$PATH
 
 # Add stuff installed via Snap to path
 export PATH=/snap/bin:$PATH
+
+docker-shell() {
+    docker exec -it "$1" /bin/bash
+}
