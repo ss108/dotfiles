@@ -146,3 +146,7 @@ export PATH=/snap/bin:$PATH
 docker-shell() {
     docker exec -it "$1" /bin/bash
 }
+
+eval "$(devbox global shellenv)"
+
+alias condaon="source ~/miniconda3/etc/profile.d/conda.sh"
