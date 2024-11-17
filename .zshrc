@@ -150,3 +150,5 @@ docker-shell() {
 eval "$(devbox global shellenv)"
 
 alias condaon="source ~/miniconda3/etc/profile.d/conda.sh"
+
+export PATH=$PATH:/mnt/c/Program\ Files/RedHat/Podman
